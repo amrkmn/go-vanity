@@ -1,15 +1,11 @@
 import { Context, Hono } from "hono";
 
-type Bindings = {
-    DOMAIN: string;
-};
-
-const app = new Hono<{ Bindings: Bindings }>();
+const app = new Hono<{ Bindings: CloudflareBindings }>();
 const repos: Record<string, string> = {
     scg: "https://github.com/amrkmn/scg",
 };
 
-function goGet(c: Context<{ Bindings: Bindings }>, name: string, url: string) {
+function goGet(c: Context<{ Bindings: CloudflareBindings }>, name: string, url: string) {
     const goGet = c.req.query("go-get");
     const domain = c.env.DOMAIN;
 
