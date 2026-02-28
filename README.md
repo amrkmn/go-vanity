@@ -1,21 +1,34 @@
-```txt
+# Go Vanity
+
+A Cloudflare Worker for handling Go vanity URLs.
+
+## Usage
+
+```bash
 npm install
 npm run dev
 ```
 
-```txt
+## Deploy
+
+```bash
 npm run deploy
 ```
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
+## Configuration
 
-```txt
+Set the `DOMAIN` environment variable in your Cloudflare Workers settings.
+
+## Development
+
+For generating/synchronizing types based on your Worker configuration:
+
+```bash
 npm run cf-typegen
 ```
 
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
+Pass the `CloudflareBindings` as generics when instantiating `Hono`:
 
 ```ts
-// src/index.ts
 const app = new Hono<{ Bindings: CloudflareBindings }>()
 ```
