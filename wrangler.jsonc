@@ -1,0 +1,15 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "go-vanity",
+    "main": "src/index.tsx",
+    "compatibility_date": "2026-02-28",
+    "vars": {
+        "DOMAIN": "amar.kim",
+    },
+    "routes": [
+        {
+            "pattern": "amar.kim/*",
+            "zone_name": "amar.kim",
+        },
+    ],
+}
